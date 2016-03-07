@@ -1,6 +1,8 @@
 <?php
 
-Phar::unlinkArchive('parser.phar');
+if(file_exists('parser.phar')) {
+    Phar::unlinkArchive('parser.phar');
+}
 
 $phar = new Phar('parser.phar');
 $phar->addFile('src/Components/CURL.php', 'Components/CURL.php');
