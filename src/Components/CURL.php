@@ -133,7 +133,6 @@ class CURL
     public function getredirects($url)
     {
         $redirects = [];
-        $this->nohead = false;
         $redirects[] = $url;
         $ref = $url;
 
