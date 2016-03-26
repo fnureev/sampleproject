@@ -114,6 +114,8 @@ class CURL
         if (file_exists($this->cookie)) {
             unlink($this->cookie);
         }
+
+        $this->cookie = '';
     }
 
     private function resetOptions()
