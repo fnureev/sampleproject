@@ -87,6 +87,13 @@ class CURL
                 }
                 break;
         }
+
+        $possibleOptions = array_merge(array_keys($this->options), ['returnHeaders', 'postData', 'cookie']);
+
+        if(!in_array($name, $possibleOptions)) {
+            return false;
+        }
+
         $this->values[$name] = $value;
     }
 
