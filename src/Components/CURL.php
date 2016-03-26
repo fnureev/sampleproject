@@ -62,16 +62,15 @@ class CURL
                 }
                 break;
             case 'postData':
-                if (is_array($value)) {
-                    if ($this->json) {
-                        $value = json_encode($value);
-                    } else {
-                        $value = http_build_query($value);
-                    }
-                }
-
                 if (!empty($value)) {
                     $this->post = 1;
+                    if (is_array($value)) {
+                        if ($this->json) {
+                            $value = json_encode($value);
+                        } else {
+                            $value = http_build_query($value);
+                        }
+                    }
                     $this->postfields = $value;
                 } else {
                     $this->post = 0;
