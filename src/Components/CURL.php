@@ -45,8 +45,8 @@ class CURL
 
     public function __destruct()
     {
-        curl_close($this->handler);
         $this->clearCookie();
+        curl_close($this->handler);
     }
 
     public function __set($name, $value)
