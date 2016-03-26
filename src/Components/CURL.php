@@ -118,7 +118,7 @@ class CURL
         $this->cookie = '';
     }
 
-    private function resetOptions()
+    public function resetOptions()
     {
         foreach ($this->defaultOptions as $key => $value) {
             $this->$key = $value;
